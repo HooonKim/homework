@@ -18,7 +18,7 @@ public class GradeMain {
 		// ---(1) 변수 선언 영역 ---
 		Scanner scanner = new Scanner(System.in);
 		Gradebean grade = new Gradebean(); 
-		Gradeservice gradeservice = new Gradeservice(); 
+		GradeServicebyhanbitImpl gradeservice = new GradeServicebyhanbitImpl(); 
 		int total=0;
 		int avg = 0;
 		String name="", result="";

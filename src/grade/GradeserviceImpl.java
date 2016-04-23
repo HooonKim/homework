@@ -1,12 +1,13 @@
 package grade;
 
-public class Gradeservice {
-
+public class GradeserviceImpl implements GradeService {
+	
+	@Override
 	public int getTotal(Gradebean grade) {
 		int total = grade.getkor() + grade.geteng() + grade.getmath();
 		return total;
 	}
-
+	@Override
 	public String getAvg(Gradebean grade){
 		String Result = "";
 		int avg= grade.getkor() + grade.geteng() + grade.getmath()/3;
@@ -29,6 +30,7 @@ public class Gradeservice {
 		return Result;
 	}
 	
+	@Override
 	public String getgrade(Gradebean grade) {
 		String result = "";
 		int avg= (grade.getkor() + grade.geteng() + grade.getmath()) / 3; 

@@ -31,20 +31,33 @@ public class KaupMain {
 	public static void main(String[] args) {
 		/* 변수 선언 */
 		Scanner scanner = new Scanner(System.in);  
-		Kaup kaup = new Kaup();
+		KaupService kaup = new KaupServiceImpl();
+		KaupBean kaupbean = new KaupBean();
 		String name = "";  
 		double height = 0.0, weight = 0.0;
-		/* 데이터 입력 */
-		System.out.println("이름,키,몸무게 입력");
-		name = scanner.next();
-		height = scanner.nextDouble();
-		weight = scanner.nextDouble();
-		/* 연산 */
-		
-		// 코딩하시오.
-		
-		/* 결과 출력 */
-		
-		System.out.println("");
+		while(true) {
+			System.out.println("===카오프 지수 구하기 프로그램===");
+			System.out.println("[메뉴] 1.계속 2.종료");
+			int key = scanner.nextInt();
+			switch (key) {
+			case 1 :
+				/* 데이터 입력 */
+				System.out.println("이름,키,몸무게 입력");
+				name = scanner.next();
+				height = scanner.nextDouble();
+				weight = scanner.nextDouble();
+				
+
+				kaupbean.setname(name);
+				kaupbean.setweight(weight);
+				kaupbean.setheight(height);
+				System.out.println(kaupbean.getname() + "님은 " + kaup.getResult(kaup.getIndex(kaupbean))); 
+				 break;
+			case 2 : System.out.println("시스템 종료입니다."); return;
+			default: System.out.println("1, 2번만 입력이 가능합니다.");break;
+			}
+			 
+			
+		}
 	}
 }
