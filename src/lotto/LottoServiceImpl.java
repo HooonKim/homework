@@ -31,15 +31,14 @@ public class LottoServiceImpl implements LottoService {
 	@Override
 	public int[][] lottocreat(LottoBean lotto) {
 		// 로또번호 생성
-		int[][] lottos = new int[5][6];	
+        int lottocnt = this.getlottocnt(lotto);  
+		int[][] lottos = new int[lottocnt+1][6];	
 		int i,j,k, ix;
         int x;
-        int lottocnt = this.getlottocnt(lotto);  
 
 		for (ix=1; ix <= lottocnt; ix++) { 
 	        for(i=0;i<6;i++){   // 랜덤수 6개 생성
 	            x=generatrandomnum();  // 랜덤함수 호출 (범위 1-45)
-	            System.out.println("ix=" + ix + " i=" + i + " x=" + x);
 	            
 	            lottos[ix][i]=x;
 	            for (j=0;j<i;j++){
@@ -54,7 +53,6 @@ public class LottoServiceImpl implements LottoService {
 			sort(lottos, ix);
 		}  
 		lotto.setLottos(lottos);
-		System.out.println(lottos[1][0]);
 		return lottos;
 	}
 
@@ -93,7 +91,8 @@ public class LottoServiceImpl implements LottoService {
 					lottofull = lottofull+ ","+lottos[i][j]; 
 				}
 			}  
-			System.out.println(lottofull + "\n"); 
+			System.out.println(i + ". " + lottofull + "\n"); 
+			System.out.println("========================="); 
 		}
 
 	}
