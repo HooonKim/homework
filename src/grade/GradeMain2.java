@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @AUTH : pakjkwan@gmail.com
  * @STORY : 성적표 프로그램
  */
-public class GradeMain {
+public class GradeMain2 {
 	/**
 	 [문제]
 	 과목별 점수를 입력받아 총점,평균,학점을 구하는 프로그램을 완성하시오
