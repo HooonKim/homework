@@ -62,8 +62,6 @@ public class Lotto {
 		}
 		return (int) Math.ceil(count);
 	}
-	
-	
-	
+	 
 	
 }
