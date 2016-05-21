@@ -103,7 +103,7 @@ public class MemberServiceImpl implements MemberService {
 			}
 	    } 
 	    */
-		return count;
+		return count; 
 	}
 
 	@Override
